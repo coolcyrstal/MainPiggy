@@ -63,7 +63,7 @@ public class HomeActivity extends AppCompatActivity {
         sp.putBoolean("Check10", sharedPreferences.getBoolean("Check10", true));
         sp.putBoolean("Check20", sharedPreferences.getBoolean("Check20", true));
         sp.putBoolean("Check100", sharedPreferences.getBoolean("Check100", true));
-        sp.putInt("CheckCount",sharedPreferences.getInt("CheckCount", 5));
+        sp.putInt("CheckCount", sharedPreferences.getInt("CheckCount", 5));
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
@@ -115,18 +115,22 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        Button btnConnect = (Button)findViewById(R.id.btnConnect);
-        btnConnect.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                if(bt.getServiceState() == BluetoothState.STATE_CONNECTED) {
+        Button btnConnect = (Button) findViewById(R.id.btnConnect);
+        btnConnect.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (bt.getServiceState() == BluetoothState.STATE_CONNECTED) {
+                    bt.stopAutoConnect();
                     bt.disconnect();
                 } else {
-                    Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.select_device_page);
-                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.contentContainer, SelectDeviceFragment.newInstance(), "Select Device")
-                            .addToBackStack(null)
-                            .commit();
-//                    setup();
+                    Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.contentContainer);
+                    if (fragment instanceof SelectDeviceFragment == false) {
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentContainer, SelectDeviceFragment.newInstance(), "Select Device")
+                                .addToBackStack(null)
+                                .commit();
+//                      setup();
+                    }else Toast.makeText(HomeActivity.this, "Please Select Connection Device", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -217,12 +221,12 @@ public class HomeActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        if(!bt.isBluetoothEnabled()) {
+        if (!bt.isBluetoothEnabled()) {
             Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(intent, BluetoothState.REQUEST_ENABLE_BT);
 //            setup();
         } else {
-            if(!bt.isServiceAvailable()) {
+            if (!bt.isServiceAvailable()) {
                 bt.setupService();
                 bt.startService(BluetoothState.DEVICE_ANDROID);
             }
@@ -324,7 +328,7 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         if (requestCode == BluetoothState.REQUEST_CONNECT_DEVICE) {
-            if (resultCode == Activity.RESULT_OK){
+            if (resultCode == Activity.RESULT_OK) {
                 bt.connect(data);
                 // String address_piggy = data.getExtras().getString(BluetoothState.EXTRA_DEVICE_ADDRESS);
                 // BluetoothAdapter mBluetoothAdapter = null;

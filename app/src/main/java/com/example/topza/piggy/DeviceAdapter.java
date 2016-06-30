@@ -7,23 +7,21 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.inthecheesefactory.thecheeselibrary.manager.Contextor;
+
 /**
  * Created by Chayenjr on 28/6/2559.
  */
 public class DeviceAdapter extends BaseAdapter {
 
-    Context mContext;
     String[] save_name;
     String[] device_name;
 
-    public DeviceAdapter(Context context, String[] save_name, String[] device_name) {
-        this.mContext= context;
-        this.save_name = save_name;
-        this.device_name = device_name;
-    }
-
     public int getCount() {
-        return save_name.length;
+        if (save_name == null)
+            return 0;
+        else
+            return save_name.length;
     }
 
     public Object getItem(int position) {
@@ -35,16 +33,29 @@ public class DeviceAdapter extends BaseAdapter {
     }
 
     public View getView(int position, View view, ViewGroup parent) {
-        LayoutInflater mInflater = (LayoutInflater)mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        LayoutInflater mInflater = (LayoutInflater) Contextor.getInstance().getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//
+//        if (view == null)
+//            view = mInflater.inflate(R.layout.list_device, parent, false);
+//
+//        TextView textView = (TextView) view.findViewById(R.id.CustomListSaveName);
+//        textView.setText(save_name[position]);
+//
+//        TextView textView2 = (TextView) view.findViewById(R.id.CustomListTextDeviceName);
+//        textView2.setText(device_name[position]);
+        BluetoothDeviceListView bluetoothView;
+        bluetoothView = new BluetoothDeviceListView(parent.getContext());
+        bluetoothView.setTextView(save_name[position]);
+        bluetoothView.setTextView2(device_name[position]);
 
-        if(view == null)
-            view = mInflater.inflate(R.layout.list_device, parent, false);
+        return bluetoothView;
+    }
 
-        TextView textView = (TextView)view.findViewById(R.id.CustomListSaveName);
-        textView.setText(save_name[position]);
+    public void setSave_name(String[] save_name) {
+        this.save_name = save_name;
+    }
 
-        TextView textView2 = (TextView)view.findViewById(R.id.CustomListTextDeviceName);
-        textView2.setText(device_name[position]);
-        return view;
+    public void setDevice_name(String[] device_name) {
+        this.device_name = device_name;
     }
 }

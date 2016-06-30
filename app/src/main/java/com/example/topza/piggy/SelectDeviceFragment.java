@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import app.akexorcist.bluetoothspp.BluetoothState;
@@ -64,13 +65,14 @@ public class SelectDeviceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.select_device_fragment, container, false);
-        initInstances(rootView);
+        View rootView = inflater.inflate(R.layout.select_device_fragment, container,false);
 
         save_name_bluetooth = getActivity().getSharedPreferences("save_bluetooth", Context.MODE_PRIVATE);
         save_list = save_name_bluetooth.getStringSet("save_list_bluetooth", new HashSet<String>());
         connect_save_list = save_name_bluetooth.getStringSet("save_connect_list_bluetooth", new HashSet<String>());
         save_edit = save_name_bluetooth.edit();
+
+        initInstances(rootView);
         return rootView;
     }
 
@@ -81,16 +83,17 @@ public class SelectDeviceFragment extends Fragment {
                 , "device 11" };
 
         listView1 = (ListView)rootView.findViewById(R.id.fragmentDeviceListView);
-        adapter = new DeviceAdapter(getActivity().getApplicationContext(),
-                save_list.toArray(new String[save_list.size()]), device_list);
+        adapter = new DeviceAdapter();
+        adapter.setDevice_name(device_list);
+        adapter.setSave_name(save_list.toArray(new String[save_list.size()]));
         listView1.setAdapter(adapter);
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                HomeActivity.bt.disconnect();
                 HomeActivity.bt.autoConnect(connect_save_list.toArray(new String[connect_save_list.size()])[position]);
                 Toast.makeText(getActivity().getApplicationContext(), connect_save_list.toArray(new String[connect_save_list.size()])[position]
                         , Toast.LENGTH_SHORT).show();
+                getActivity().getSupportFragmentManager().popBackStack();
             }
         });
 
@@ -124,9 +127,9 @@ public class SelectDeviceFragment extends Fragment {
                     save_edit.putStringSet("save_connect_list_bluetooth", connect_save_list).commit();
                     save_list.add(vir_save_name);
                     save_edit.putStringSet("save_list_bluetooth", save_list).commit();
-                    adapter = new DeviceAdapter(getActivity().getApplicationContext(),
-                            save_list.toArray(new String[save_list.size()]), device_list);
-                    listView1.setAdapter(adapter);
+                    adapter.setSave_name(save_list.toArray(new String[save_list.size()]));
+                    adapter.setDevice_name(device_list);
+                    adapter.notifyDataSetChanged();
                 }
             }
         } else if (requestCode == BluetoothState.REQUEST_ENABLE_BT) {

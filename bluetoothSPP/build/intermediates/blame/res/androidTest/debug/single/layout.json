@@ -1,18 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\device_name.xml",
-        "source": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\layout\\device_name.xml"
-    },
-    {
         "merged": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\device_name.xml",
         "source": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\layout\\device_name.xml"
     },
     {
-        "merged": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\device_list.xml",
-        "source": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\layout\\device_list.xml"
-    },
-    {
         "merged": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\device_list.xml",
         "source": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\layout\\device_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\device_name.xml",
+        "source": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\layout\\device_name.xml"
+    },
+    {
+        "merged": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\device_list.xml",
+        "source": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\layout\\device_list.xml"
     }
 ]

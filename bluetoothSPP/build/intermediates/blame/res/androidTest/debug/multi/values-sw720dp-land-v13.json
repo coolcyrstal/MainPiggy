@@ -1,48 +1,5 @@
 [
     {
-        "outputFile": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 52,
-                    "endOffset": 103
-                },
-                "from": {
-                    "file": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 52,
-                        "endOffset": 103
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 108,
-                    "endColumn": 54,
-                    "endOffset": 158
-                },
-                "from": {
-                    "file": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 108,
-                        "endColumn": 54,
-                        "endOffset": 158
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
         "map": [
             {
@@ -74,6 +31,49 @@
                 },
                 "from": {
                     "file": "C:\\Users\\Chayenjr\\AndroidStudioProjects\\MainPiggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 108,
+                        "endColumn": 54,
+                        "endOffset": 158
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\res\\merged\\androidTest\\debug\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 52,
+                    "endOffset": 103
+                },
+                "from": {
+                    "file": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 52,
+                        "endOffset": 103
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 108,
+                    "endColumn": 54,
+                    "endOffset": 158
+                },
+                "from": {
+                    "file": "C:\\Users\\topza\\Desktop\\Piggy\\Piggy\\bluetoothSPP\\build\\intermediates\\bundles\\debug\\res\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
